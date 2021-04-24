@@ -1,0 +1,523 @@
+//default styles start
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto:wght@500&display=swap');
+$poppins: 'Poppins',
+sans-serif;
+$roboto: 'Roboto',
+sans-serif;
+$color-primary: #48B774;
+body {
+    font-size: 16px;
+    font-family: $poppins;
+    background: #ECF7F3
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.btn {
+    border: none;
+    background: $color-primary;
+    color: #fff;
+    font-weight: 500;
+    font-family: $poppins;
+    border-radius: 20px;
+    font-size: 14px;
+    padding: 10px 24px;
+    cursor: pointer;
+    transition: .5s;
+    &:hover {
+        color: #fff;
+        background: #07c754;
+    }
+}
+
+//default styles end
+//nav start
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 24px 10px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    .logo {
+        width: 131px;
+        height: 40px;
+        background: url('../img/css_sprites.png') -150px -170px;
+    }
+    ul {
+        display: flex;
+        line-height: 24px;
+        li {
+            list-style-type: none;
+            margin-right: 45px;
+            &:last-child {
+                margin-right: 0;
+            }
+            a {
+                text-decoration: none;
+                font-family: $poppins;
+                font-size: 16px;
+                line-height: 47px;
+                transition: 0.5s;
+                color: #4A4A4A;
+                position: relative;
+                display: inline-block;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    margin-left: -10px;
+                    display: inline-block;
+                    width: 0;
+                    opacity: 0;
+                    border-bottom: 2px solid #FB9B69;
+                    transition: width 0.3s;
+                }
+                &:hover:after {
+                    width: 21px;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    #mobile-menu-btn {
+        display: none;
+        cursor: pointer;
+        svg {
+            width: 30px;
+            height: 30px;
+        }
+    }
+    @media screen and (max-width: 700px) {
+        position: relative;
+        #mobile-menu-btn {
+            display: block;
+            order: 2;
+            margin-top: 5px;
+        }
+        #menu {
+            position: absolute;
+            top: 73px;
+            right: 0;
+            max-width: 320px;
+            transform: translateY(-980px);
+            transition: all 0.3s;
+            &.menu-active {
+                transform: translateY(0px);
+                transition: all 0.3s;
+            }
+            ul {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                padding: 10px;
+                line-height: 30px;
+                border: 2px solid #fff;
+                border-right: none;
+                background: #07c754;
+                border-radius: 20px;
+                li {
+                    a {
+                        color: #fff;
+                        padding: 0;
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//nav end
+//main start
+main {
+    display: flex;
+    .left-part {
+        flex-basis: 50%;
+        .main-title {
+            color: #2D2D2D;
+            font-size: 48px;
+            font-weight: 700;
+            margin-top: 120px;
+            line-height: 65px;
+            span {
+                color: #FF8345;
+            }
+        }
+        .main-text {
+            color: #7C7C7C;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 26px;
+            width: 440px;
+            margin-top: 22px;
+            margin-bottom: 30px;
+        }
+        .btn {
+            text-decoration: none;
+            padding: 12px 22px;
+            font-size: 15px;
+            line-height: 22px;
+        }
+        form {
+            .form-group {
+                position: relative;
+                margin-top: 55px;
+                button {
+                    position: absolute;
+                    right: 6px;
+                    top: 4px;
+                    width: 55px;
+                    height: 55px;
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    transition: 0.3s;
+                    background: url('../img/css_sprites.png') -150px -230px;
+                    &:hover {
+                        opacity: 0.85;
+                    }
+                }
+                input {
+                    font-size: 16px;
+                    font-family: $roboto;
+                    width: 100%;
+                    height: 62px;
+                    padding: 21px 0 21px 30px;
+                    border: none;
+                    border-radius: 100px;
+                    &::placeholder {
+                        color: #A1A1A1;
+                        font-size: 16px;
+                        font-family: $roboto;
+                        @media screen and (max-width: 950px) {
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+        }
+        .regular-users {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 40px 0 44px;
+            .users-images {
+                display: flex;
+                list-style-type: none;
+                flex-direction: row-reverse;
+                .img1,
+                .img2,
+                .img3,
+                .img4 {
+                    width: 38px;
+                    height: 38px;
+                    border-radius: 50%;
+                    margin-right: -12px;
+                }
+                .img1 {
+                    background: url('../img/css_sprites.png') -225px -230px;
+                }
+                .img2 {
+                    background: url('../img/css_sprites.png') -320px -126px;
+                }
+                .img3 {
+                    background: url('../img/css_sprites.png') -320px -68px;
+                }
+                .img4 {
+                    background: url('../img/css_sprites.png') -320px -10px;
+                }
+                img {
+                    border-radius: 50%;
+                }
+            }
+            p {
+                font-size: 16px;
+                font-family: $roboto;
+                font-weight: 500;
+                color: #707070;
+                margin-left: 24px;
+                padding-top: 8px;
+                a {
+                    color: #FD905A;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .right-part {
+        flex-basis: 50%;
+        position: relative;
+        margin-top: 90px;
+        .main-img {
+            height: 100%;
+            position: absolute;
+            overflow: hidden;
+            bottom: -55px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+        }
+        .flags-wrap {
+            position: relative;
+            border-radius: 50%;
+            width: 450px;
+            height: 450px;
+            margin: 0 auto;
+            border: 1px solid #000;
+        }
+        .flags {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            .img-wrap {
+                // position: absolute;
+                display: inline-block;
+                padding: 10px;
+                border-radius: 50%;
+                overflow: hidden;
+            }
+            .flag {
+                display: inline-block;
+                border-radius: 50%;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+            .flag-1 {
+                animation: circle 12s linear infinite;
+            }
+            .flag-2 {
+                animation: circle 12s linear infinite;
+                animation-delay: 2s, 0s;
+            }
+            .flag-3 {
+                animation: circle 12s linear infinite;
+                animation-delay: 4s, 0s;
+            }
+            .flag-4 {
+                animation: circle 12s linear infinite;
+                animation-delay: 6s, 0s;
+            }
+            .flag-5 {
+                animation: circle 12s linear infinite;
+                animation-delay: 8s, 0s;
+            }
+            .flag-6 {
+                animation: circle 12s linear infinite;
+                animation-delay: 10s, 0s;
+            }
+            /*.flag-1 {
+                animation: circle 12s linear infinite;
+                background: url('../img/css_sprites.png') -10px -10px;
+                width: 140px;
+                height: 140px; 
+            } 
+            .flag-2 { animation: circle 12s linear infinite;
+                animation-delay: 2s, 0s;
+                width: 130px;
+                height: 130px;
+                background: url('../img/css_sprites.png') -170px -10px; 
+            }
+            .flag-3 { 
+                animation: circle 12s linear infinite;
+                animation-delay: 4s, 0s;
+                width: 120px;
+                height: 120px;
+                background: url('../img/css_sprites.png') -10px -170px; 
+            } 
+            .flag-4 { animation: circle 12s linear infinite;
+                animation-delay: 2s, 0s;
+                width: 130px;
+                height: 130px;
+                background: url('../img/css_sprites.png') -170px -10px; 
+            }
+            .flag-5 { 
+                animation: circle 12s linear infinite;
+                animation-delay: 4s, 0s;
+                width: 120px;
+                height: 120px;
+                background: url('../img/css_sprites.png') -10px -170px; 
+            } 
+            .flag-6 { animation: circle 12s linear infinite;
+                animation-delay: 2s, 0s;
+                width: 130px;
+                height: 130px;
+                background: url('../img/css_sprites.png') -170px -10px; 
+            }*/
+        }
+        .circle {
+            position: absolute;
+            top: 224px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: $color-primary;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            animation: circleAnimation 5s infinite ease;
+        }
+    }
+    @media screen and (max-width: 1040px) {
+        flex-wrap: wrap;
+        .left-part {
+            flex-basis: 100%;
+            margin: 0 auto;
+            text-align: center;
+            .main-title {
+                margin-top: 20px;
+                font-size: 30px;
+                line-height: 1.2;
+            }
+            .main-text {
+                width: 70%;
+                margin: 10px auto 20px
+            }
+            form {
+                width: 70%;
+                margin: 0 auto;
+            }
+            .regular-users {
+                justify-content: center
+            }
+        }
+        .right-part {
+            flex-basis: 80%;
+            margin: 0 auto 100px;
+            .main-img {
+                bottom: -90px
+            }
+            .flags-wrap {
+                margin-top: 20px;
+                margin-bottom: 50px;
+                width: 300px;
+                height: 300px;
+                top: 50px;
+                margin: 0 auto
+            }
+            .circle {
+                top: 150px;
+            }
+        }
+    }
+    @media screen and (max-width: 450px) {
+        .left-part {
+            .main-text {
+                width: auto;
+            }
+        }
+        .right-part {
+            .flags-wrap {
+                width: 250px;
+                height: 250px;
+            }
+            .circle {
+                top: 123px;
+            }
+        }
+    }
+}
+
+@keyframes circleAnimation {
+    0% {
+        width: 280px;
+        height: 280px;
+    }
+    50% {
+        width: 80%;
+        height: 80%;
+    }
+    100% {
+        width: 280px;
+        height: 280px;
+    }
+}
+
+@keyframes circle {
+    0% {
+        transform: rotate(0deg) translate(-225px) rotate(0deg);
+        width: 40%;
+        height: 40%;
+    }
+    50% {
+        transform: rotate(180deg) translate(-225px) rotate(-180deg);
+        width: 20%;
+        height: 20%;
+    }
+    100% {
+        transform: rotate(360deg) translate(-225px) rotate(-360deg);
+        width: 40%;
+        height: 40%;
+    }
+}
+
+@media screen and (max-width:1040px) {
+    @keyframes circle {
+        0% {
+            transform: rotate(0deg) translate(-150px) rotate(0deg);
+            width: 40%;
+            height: 40%;
+        }
+        50% {
+            transform: rotate(180deg) translate(-150px) rotate(-180deg);
+            width: 20%;
+            height: 20%;
+        }
+        100% {
+            transform: rotate(360deg) translate(-150px) rotate(-360deg);
+            width: 40%;
+            height: 40%;
+        }
+    }
+    @keyframes circleAnimation {
+        0% {
+            width: 140px;
+            height: 140px;
+        }
+        50% {
+            width: 80%;
+            height: 80%;
+        }
+        100% {
+            width: 140px;
+            height: 140px;
+        }
+    }
+}
+
+@media screen and (max-width:450px) {
+    @keyframes circle {
+        0% {
+            transform: rotate(0deg) translate(-125px) rotate(0deg);
+            width: 40%;
+            height: 40%;
+        }
+        50% {
+            transform: rotate(180deg) translate(-125px) rotate(-180deg);
+            width: 20%;
+            height: 20%;
+        }
+        100% {
+            transform: rotate(360deg) translate(-125px) rotate(-360deg);
+            width: 40%;
+            height: 40%;
+        }
+    }
+}
