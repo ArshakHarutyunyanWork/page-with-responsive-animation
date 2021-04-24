@@ -542,6 +542,9 @@ main .right-part .circle {
   main .left-part .main-text {
     width: auto;
   }
+  main .left-part form {
+    width: 100%;
+  }
   main .right-part .flags-wrap {
     width: 250px;
     height: 250px;
